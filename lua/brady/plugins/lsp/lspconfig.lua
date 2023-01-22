@@ -1,22 +1,22 @@
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
-  return
+	return
 end
 
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
-  return
+	return
 end
 
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
-  return
+	return
 end
 
 local keymap = vim.keymap
 
-local on_attach = function(client, bufnr)  
-  -- keybind options
+local on_attach = function(client, bufnr)
+	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
@@ -32,8 +32,8 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 	keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand sideocal on_attach = function(client, bufnr)
-  
-  -- typescript specific keymaps (e.g. rename file and update imports)
+
+	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
 	end
@@ -42,25 +42,25 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
 })
 
 lspconfig["cssls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 lspconfig["tailwindcss"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 lspconfig["sumneko_lua"].setup({
@@ -81,4 +81,9 @@ lspconfig["sumneko_lua"].setup({
 			},
 		},
 	},
+})
+
+lspconfig["clangd"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
