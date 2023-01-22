@@ -1,3 +1,4 @@
+-- auto install packer if not installed
 local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -74,14 +75,8 @@ return packer.startup(function(use)
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-	})
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
