@@ -1,16 +1,8 @@
 # NeoVIM Environment Files 🚀
 **IMPORTANT:** These are primarily meant for inspiration. I wouldn't just blindly use them. Proceed at your own risk!
 
-### Relevant Files
-- [.zshrc](.zshrc) - Zsh Shell Configuration
-- [coolnight.itermcolors](coolnight.itermcolors) - iTerm2 Color Scheme
-
 # Tmux Setup
 ✍🏼 [How To Use and Configure Tmux Alongside Neovim](https://josean.com/posts/tmux-setup)
-
-
-### Relevant Files
-- [.tmux.conf](.tmux.conf) - Tmux Configuration File
 
 # Neovim Setup
 💡 *If you clone the repo into your machine and use the config by copying .config/nvim to your home folder, you'll have to restart neovim after the plugins install. After restart, if you are opening a lua file or another file I have language servers configured for, like html, css or javascript/typescript, you might also get an error saying that the server failed to start. This is because Mason hasn't installed it yet. Press enter to continue, Mason will automatically install it.*
