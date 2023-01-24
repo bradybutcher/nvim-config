@@ -40,6 +40,15 @@ return packer.startup(function(use)
 	use("sainnhe/sonokai")
 	use("kyazdani42/blue-moon")
 
+	-- startup config
+	use({
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("alpha").setup(require("alpha.themes.startify").config)
+		end,
+	})
+
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
