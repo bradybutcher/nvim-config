@@ -39,6 +39,7 @@ return packer.startup(function(use)
 	use("sainnhe/everforest")
 	use("sainnhe/sonokai")
 	use("kyazdani42/blue-moon")
+	use("danilo-augusto/vim-afterglow")
 
 	-- startup config
 	use({
