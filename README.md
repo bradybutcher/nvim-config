@@ -8,6 +8,7 @@
 💡 *If you clone the repo into your machine and use the config by copying .config/nvim to your home folder, you'll have to restart neovim after the plugins install. After restart, if you are opening a lua file or another file I have language servers configured for, like html, css or javascript/typescript, you might also get an error saying that the server failed to start. This is because Mason hasn't installed it yet. Press enter to continue, Mason will automatically install it.*
 
 ### Setup Requires
+- True Color Terminal with AI: [Warp](https://warp.dev/) (My personal favorite)
 - True Color Terminal Like: [iTerm2](https://iterm2.com/)
 - [Neovim](https://neovim.io/) (Version 0.8 or Later)
 - [Nerd Font](https://www.nerdfonts.com/) - I use Meslo Nerd Font
